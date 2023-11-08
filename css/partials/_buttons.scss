@@ -1,0 +1,20 @@
+.buttons-container {
+    display: flex;
+    padding: 1%;
+    background-color: #232323;
+    justify-content: center;
+    gap: 5%;
+
+    button {
+        display: flex;
+        width: 3%;
+        justify-content: center;
+        border-radius: 5px;
+        border: solid #008000 2px;
+        transition: all 0.5s;
+        &:hover {
+            cursor: pointer;
+            background-color: #a7a7a7;
+        }
+    }
+}
