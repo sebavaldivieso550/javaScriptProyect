@@ -1,0 +1,39 @@
+footer {
+    display: grid;
+    padding: 2%;
+    grid-template-columns: 1fr 1fr;
+    background-color: #161616;
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1%;
+
+        a {
+            display: flex;
+            width: 10%;
+            height: 50%;
+            text-decoration: none;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+
+            i {
+                display: flex;
+                color: green;
+            }
+        }
+    }
+    
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            color: green;
+        }
+    }
+}
