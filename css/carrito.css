@@ -99,6 +99,10 @@ body main .carrito-container .carrito-ul-container ul li span {
   width: 100%;
   font-size: 1.5rem;
 }
+body main .carrito-container .carrito-ul-container ul .total-price {
+  display: flex;
+  justify-content: end;
+}
 
 footer {
   display: grid;

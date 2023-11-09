@@ -33,10 +33,14 @@ fetch("../json/productos.json")
     let sortProductsAZ = () => {
         let sortedData = [...data].sort((a, b) => a.title.localeCompare(b.title));
         createProductCards(sortedData);
+        let cardsContainer = document.getElementById("products-cards");
+        cardsContainer.style.height = "600vh";
     };
     let sortProductsZA = () => {
         let sortedData = [...data].sort((a, b) => b.title.localeCompare(a.title));
         createProductCards(sortedData);
+        let cardsContainer = document.getElementById("products-cards");
+        cardsContainer.style.height = "600vh";
     }
     let sortProductsOferta = () => {
         let filteredDAta = data.filter(product => product.oferta === true);
