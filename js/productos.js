@@ -16,8 +16,12 @@ fetch("../json/productos.json")
                 let price = document.createElement("p");
                 price.textContent = "$" + product.price;
                 card.appendChild(price);
-                let cartButton = document.createElement("button");
-                cartButton.textContent = "🛒"
+                let cartButton = document.createElement('button');
+                cartButton.textContent = "🛒";
+                cartButton.addEventListener('click', () => {
+                    addToCart(product);    
+                    alert(`${product.title} agregado al carrito.`);
+                });
                 card.appendChild(cartButton);
 
                 productsCards.appendChild(card);
@@ -34,10 +38,18 @@ fetch("../json/productos.json")
         let sortedData = [...data].sort((a, b) => b.title.localeCompare(a.title));
         createProductCards(sortedData);
     }
+    let sortProductsOferta = () => {
+        let filteredDAta = data.filter(product => product.oferta === true);
+        createProductCards(filteredDAta);
+        let cardsContainer = document.getElementById("products-cards");
+        cardsContainer.style.height = "200vh";
+    }
 
     let sortAZButton = document.getElementById("sort-AZ");
     let sortZAButton = document.getElementById("sort-ZA");
+    let sortOfertaButton = document.getElementById("sort-oferta");
 
     sortAZButton.addEventListener("click", sortProductsAZ);
     sortZAButton.addEventListener("click", sortProductsZA);
+    sortOfertaButton.addEventListener("click", sortProductsOferta);
 });

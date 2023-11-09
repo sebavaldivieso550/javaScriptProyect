@@ -51,16 +51,16 @@ document.addEventListener("DOMContentLoaded", function() {
 /* " */
         card.appendChild(price);
 /* sumo el button */
-        let button = document.createElement('button');
-        button.textContent = "🛒";
-/* le agrego un alert onclick */
-        button.addEventListener('click', () => {
+        let cartButton = document.createElement('button');
+        cartButton.textContent = "🛒";
+/* le agrego un alert y la funcion addToCart onclick */
+        cartButton.addEventListener('click', () => {
+            addToCart(product);
             alert(`${product.title} agregado al carrito.`);
         });
 /* lo coloco en la tarjeta */
-        card.appendChild(button);
+        card.appendChild(cartButton);
 /* finalmente coloco las tarjetas */
         ofertaContainer.appendChild(card);
     });
 });
-

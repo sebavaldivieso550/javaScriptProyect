@@ -42,7 +42,7 @@ const products = [
     "oferta": true,
     "description": "99% sRGB: With 99% sRGB, this monitor offers a wider color gamut than most conventional monitors, giving deeper colors and defining features.",
     "category": "electronics",
-    "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+    "image": "https://m.media-amazon.com/images/I/71vRYxuUa6L.__AC_SX300_SY300_QL70_FMwebp_.jpg",
     },
     {
     "id": 6,
