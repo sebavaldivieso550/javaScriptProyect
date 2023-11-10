@@ -1,3 +1,5 @@
+/* Aca es el primer arreglo que use para el main.js despues lo pase a json pero no tuve tiempo de cambiar el codigo en el main.js para terminar eliminando este, asi que aca queda */
+
 const products = [
     {
     "id": 1,

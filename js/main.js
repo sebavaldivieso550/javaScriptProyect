@@ -1,3 +1,29 @@
+/* darkmode button */
+document.addEventListener('DOMContentLoaded', (event) => {
+        const darkModeButton = document.getElementById('darkmode-button');
+        const themeStyle = document.getElementById('theme-style');
+    
+        let isDarkMode = localStorage.getItem('isDarkMode') === 'true';
+    
+        applyTheme();
+    
+        darkModeButton.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            localStorage.setItem('isDarkMode', isDarkMode);
+            applyTheme();
+        });
+    
+        function applyTheme() {
+            if (isDarkMode) {
+                themeStyle.href = "./css/stylesDM.css";
+                darkModeButton.textContent = "☀️";
+            } else {
+                themeStyle.href = "./css/styles.css";
+                darkModeButton.textContent = "🌚";
+            }
+        }
+    });
+
 /* Busco el id swiper-wrapper */
 let swiperWrapper = document.getElementById('swiper-wrapper');
 /* filtro los elementos en oferta */

@@ -1,3 +1,29 @@
+/* darkmode button */
+document.addEventListener('DOMContentLoaded', (event) => {
+    const darkModeButton = document.getElementById('darkmode-button');
+    const themeStyle = document.getElementById('theme-style');
+
+    let isDarkMode = localStorage.getItem('isDarkMode') === 'true';
+
+    applyTheme();
+
+    darkModeButton.addEventListener('click', () => {
+        isDarkMode = !isDarkMode;
+        localStorage.setItem('isDarkMode', isDarkMode);
+        applyTheme();
+    });
+
+    function applyTheme() {
+        if (isDarkMode) {
+            themeStyle.href = "../css/productosDM.css";
+            darkModeButton.textContent = "☀️";
+        } else {
+            themeStyle.href = "../css/productos.css";
+            darkModeButton.textContent = "🌚";
+        }
+    }
+});
+/* creacion de las tarjetas usando json */
 fetch("../json/productos.json")
     .then(response => response.json())
     .then(data => {
@@ -29,7 +55,7 @@ fetch("../json/productos.json")
     };
 
     createProductCards(data);
-    
+    /* funciones y botones para ordenar de AZ, ZA, y por oferta */
     let sortProductsAZ = () => {
         let sortedData = [...data].sort((a, b) => a.title.localeCompare(b.title));
         createProductCards(sortedData);
