@@ -70,13 +70,15 @@ body main .carrito-container {
 body main .carrito-container .carrito-ul-container {
   display: flex;
   width: 100%;
+  justify-content: center;
   border: solid black 2px;
   border-radius: 10px;
   padding: 1%;
 }
 body main .carrito-container .carrito-ul-container ul {
   display: flex;
-  width: 95%;
+  width: 100%;
+  align-items: center;
   flex-direction: column;
 }
 body main .carrito-container .carrito-ul-container ul button {
@@ -84,6 +86,8 @@ body main .carrito-container .carrito-ul-container ul button {
   justify-self: center;
   align-self: center;
   border-radius: 5px;
+  background-color:#161616;
+  color: #234b1e;
 }
 body main .carrito-container .carrito-ul-container ul li {
   display: flex;
@@ -98,6 +102,7 @@ body main .carrito-container .carrito-ul-container ul li img {
   justify-self: start;
   align-self: center;
   border-radius: 5px;
+  background-color: white;
 }
 body main .carrito-container .carrito-ul-container ul li span {
   align-self: center;
@@ -121,11 +126,13 @@ body main .carrito-container .carrito-ul-container ul li button {
 }
 body main .carrito-container .carrito-ul-container ul .total-price {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
+  width: 40%;
 }
 body main .carrito-container .carrito-ul-container ul .total-price p {
-  height: 120%;
+  height: 100%;
+  width: 100%;
 }
 footer {
   display: grid;
@@ -156,8 +163,40 @@ footer .social-media a i {
 footer .info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
 }
 footer .info p {
   color: green;
-}/*# sourceMappingURL=carrito.css.map */
+}
+
+@media (max-width: 950px) {
+  #cart-list {
+    padding: 1%;
+  }
+  #cart-list li img {
+    display: flex;
+    position:relative;
+    height: 5vh !important;
+    width: 40% !important;
+    text-align: center;
+    object-fit: contain;
+  }
+  #cart-list li span {
+    width: 100%;
+    font-size: 1rem !important;
+  }
+  body main .carrito-container .carrito-ul-container ul li p {
+    width: 32%;
+    height: 60%;
+  }
+  body main .carrito-container .carrito-ul-container ul li button {
+    width: 12%;
+    height: 60%;
+  }
+  body main .carrito-container .carrito-ul-container ul .total-price {
+    width: 40%;
+  }
+  body main .carrito-container .carrito-ul-container ul button {
+    width: 20%;
+  }
+}

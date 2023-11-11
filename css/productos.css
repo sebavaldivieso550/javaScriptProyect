@@ -66,6 +66,7 @@
   width: 3%;
   justify-content: center;
   border-radius: 5px;
+  background-color: white;
   border: solid #ffacac 2px;
   transition: all 0.5s;
 }
@@ -162,8 +163,37 @@ footer .social-media a i {
 footer .info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
 }
 footer .info p {
-  color: ffffff;
-}/*# sourceMappingURL=productos.css.map */
+  color: #ffffff;
+}
+
+@media (max-width: 950px) {
+  .buttons-container button {
+    width: 15%;
+  }
+  .cards-container {
+    display: flex;
+    height: auto !important;
+    flex-direction: column;
+    gap: 1% !important;
+  }
+  .card {
+    gap: 1% !important;
+  }
+  .card h2 {
+    font-size: 1rem !important;
+  }
+  .card img {
+    height: 15vh !important;
+  }
+  .card p {
+    width: auto !important;
+    margin: 1%;
+    padding: 2%;
+  }
+  .card button {
+    padding: 1%;
+  }
+}

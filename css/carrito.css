@@ -70,20 +70,23 @@
   body main .carrito-container .carrito-ul-container {
     display: flex;
     width: 100%;
+    justify-content: center;
     border: solid #b1efff 2px;
     border-radius: 10px;
     padding: 1%;
   }
   body main .carrito-container .carrito-ul-container ul {
     display: flex;
-    width: 95%;
+    width: 100%;
     flex-direction: column;
+    align-items: center;
   }
   body main .carrito-container .carrito-ul-container ul button {
     width: 10%;
     justify-self: center;
     align-self: center;
     border-radius: 5px;
+    background-color:#ffacac;
   }
   body main .carrito-container .carrito-ul-container ul li {
     display: flex;
@@ -98,16 +101,18 @@
     justify-self: start;
     align-self: center;
     border-radius: 5px;
+    background-color: white;
   }
   body main .carrito-container .carrito-ul-container ul li span {
     align-self: center;
-    margin-inline-start: 2%;
     width: 100%;
+    padding: 1%;
     font-size: 1.5rem;
   }
   body main .carrito-container .carrito-ul-container ul li p {
     align-self: center;
     text-align: center;
+    justify-content: center;
     background-color: #b1efff;
     color: #ffacac;
     height: 40%;
@@ -121,11 +126,13 @@
   }
   body main .carrito-container .carrito-ul-container ul .total-price {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
+    width: 40%;
   }
   body main .carrito-container .carrito-ul-container ul .total-price p {
-    height: 120%;
+    height: 100%;
+    width: 100%;
   }
   footer {
     display: grid;
@@ -156,8 +163,40 @@
   footer .info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
   }
   footer .info p {
     color: #ffffff;
   }
+
+@media (max-width: 950px) {
+  #cart-list {
+    padding: 1%;
+  }
+  #cart-list li img {
+    display: flex;
+    position:relative;
+    height: 5vh !important;
+    width: 40% !important;
+    text-align: center;
+    object-fit: contain;
+  }
+  #cart-list li span {
+    width: 100%;
+    font-size: 1rem !important;
+  }
+  body main .carrito-container .carrito-ul-container ul li p {
+    width: 32%;
+    height: 60%;
+  }
+  body main .carrito-container .carrito-ul-container ul li button {
+    width: 12%;
+    height: 60%;
+  }
+  body main .carrito-container .carrito-ul-container ul .total-price {
+    width: 40%;
+  }
+  body main .carrito-container .carrito-ul-container ul button {
+    width: 20%;
+  }
+}
