@@ -24,6 +24,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 /* validacion de datos */
+/* Use una expresion regular para el email
+todavia no la entiendo, pero ahi esta, funciona xd */
 document.addEventListener('DOMContentLoaded', (event) => {
     let form = document.querySelector('.form');
     let nameInputs = document.querySelectorAll('.name-last');
@@ -42,17 +44,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         });
 
-        if (!emailInput.value.includes('@')) {
-            valid = false;
-            emailInput.classList.add('invalid');
-        } else {
-            emailInput.classList.remove('invalid');
+
+        function validateEmail(emailInput) {
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          
+            return emailRegex.test(emailInput);
         }
+            
+            if (validateEmail(emailInput)) {
+                emailInput.classList.remove('invalid');
+                valid = false;
+              } else {
+                emailInput.classList.add('invalid');
+              }
 
         if (valid) {
-            alert('Formulario enviado exitosamente');
+            Swal.fire({
+                title: "Enviado",
+                text: "Formulario enviado exitosamente.",
+                icon: "Continuar"
+              });;;
         } else {
-            alert('Validacion de formulario erronea');
+            Swal.fire({
+                title: "Invalido",
+                text: "Validacion de formulario erronea.",
+                icon: "Continuar"
+              });;;
         }
     });
 

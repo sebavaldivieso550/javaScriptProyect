@@ -46,7 +46,11 @@ fetch("../json/productos.json")
                 cartButton.textContent = "🛒";
                 cartButton.addEventListener('click', () => {
                     addToCart(product);    
-                    alert(`${product.title} agregado al carrito.`);
+                    Swal.fire({
+                        title: "Producto agregado",
+                        text: `${product.title} ha sido agregado al carrito`,
+                        icon: "Continuar"
+                      });;
                 });
                 card.appendChild(cartButton);
 

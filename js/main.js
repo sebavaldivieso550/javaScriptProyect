@@ -41,8 +41,8 @@ ofertaProducts.forEach((product) => {
     swiperSlide.appendChild(img);
     swiperWrapper.appendChild(swiperSlide);
 });
-/* esto es parte de la libreria, supongo que crea el swiper, y los botones, no estoy seguro */
-var swiper = new Swiper(".mySwiper", {
+/* swiper */
+let swiper = new Swiper(".mySwiper", {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -82,7 +82,11 @@ document.addEventListener("DOMContentLoaded", function() {
 /* le agrego un alert y la funcion addToCart onclick */
         cartButton.addEventListener('click', () => {
             addToCart(product);
-            alert(`${product.title} agregado al carrito.`);
+            Swal.fire({
+                title: "Producto agregado",
+                text: `${product.title} ha sido agregado al carrito`,
+                icon: "Continuar"
+              });;
         });
 /* lo coloco en la tarjeta */
         card.appendChild(cartButton);

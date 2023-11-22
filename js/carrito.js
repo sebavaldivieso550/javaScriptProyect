@@ -45,6 +45,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             itemTitle.textContent = item.title;
             listItem.appendChild(itemTitle);
 
+            /* Agregue las cantidades */
+            let itemQuantity = document.createElement("span");
+            itemQuantity.textContent = "Cantidad: " + (item.quantity || 1);
+            listItem.appendChild(itemQuantity);
+
             let itemPrice = document.createElement("p");
             itemPrice.textContent = "$" + item.price;
             listItem.appendChild(itemPrice);
@@ -54,7 +59,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             deleteButton.addEventListener('click', () => deleteItemFromCart('cartItems', item));
             listItem.appendChild(deleteButton);
 
-            totalPrice += item.price;
+            totalPrice += item.price * (item.quantity || 1);
 
             cartList.appendChild(listItem);
         });
@@ -73,14 +78,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
     };
 });
 /* funciones para borrar los items */
+
+/* modifique el delete individual para que reste 1 de la propiedad quantity */
 function deleteItemFromCart(key, itemToRemove) {
     let cartItems = JSON.parse(localStorage.getItem(key));
     if (!cartItems) return;
-
-    const updatedCartItems = cartItems.filter(item => item.title !== itemToRemove.title);
-    localStorage.setItem(key, JSON.stringify(updatedCartItems));
-    location.reload(); 
-}
+  
+    let updatedCartItems = cartItems.map(item => {
+      if (item.title === itemToRemove.title) {
+        /* Esta linea lleva math.max porque se me genero el problema de que quantity se hacia negativa */
+        item.quantity = Math.max(0, (item.quantity || 1) - 1);
+      }
+      return item;
+    });
+  
+    /* los items con cantidad 0 son deleteados */
+    const filteredCartItems = updatedCartItems.filter(item => item.quantity > 0);
+  
+    localStorage.setItem(key, JSON.stringify(filteredCartItems));
+    location.reload();
+  }
 
 function deleteAllItemsFromCart(key) {
     localStorage.removeItem(key);
