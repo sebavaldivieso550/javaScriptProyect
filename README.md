@@ -43,30 +43,32 @@ Este proyecto es una simulación de una tienda de electrónica, desarrollado com
     * Pie de página (`footer`) con información de contacto y enlaces a redes sociales.
 
 ## 📁 Estructura del Proyecto
+``````
 .
-├── css/
-│   ├── carritoDM.css       # Estilos para el carrito en modo oscuro
-│   ├── carrito.css         # Estilos para el carrito en modo claro
-│   ├── contactoDM.css      # Estilos para contacto en modo oscuro
-│   ├── contacto.css        # Estilos para contacto en modo claro
-│   ├── productosDM.css     # Estilos para productos en modo oscuro
-│   ├── productos.css       # Estilos para productos en modo claro
-│   ├── stylesDM.css        # Estilos generales y home en modo oscuro
-│   └── styles.css          # Estilos generales y home en modo claro
-├── js/
-│   ├── carrito.js          # Lógica del carrito de compras
-│   ├── contact.js          # Lógica del formulario de contacto
-│   ├── dataManager.js      # Gestión de datos (productos, carrito) y Local Storage
-│   ├── index.js            # Lógica de la página principal (home)
-│   ├── products.js         # Lógica de la página de productos
-│   └── themeToggle.js      # Lógica para alternar el modo claro/oscuro
-├── img/                    # Directorio para imágenes (ej: logos, banners)
-├── productos.json          # Datos de los productos
-├── index.html              # Página principal (Home)
-├── productos.html          # Página de listado de productos
-├── carrito.html            # Página del carrito de compras
-├── contacto.html           # Página de contacto
-└── package.json            # Metadatos del proyecto y scripts
+    css/
+        carritoDM.css       # Estilos para el carrito en modo oscuro
+        carrito.css         # Estilos para el carrito en modo claro
+        contactoDM.css      # Estilos para contacto en modo oscuro
+        contacto.css        # Estilos para contacto en modo claro
+        productosDM.css     # Estilos para productos en modo oscuro
+        productos.css       # Estilos para productos en modo claro
+        stylesDM.css        # Estilos generales y home en modo oscuro
+        styles.css          # Estilos generales y home en modo claro
+    js/
+        carrito.js          # Lógica del carrito de compras
+        contact.js          # Lógica del formulario de contacto
+        dataManager.js      # Gestión de datos (productos, carrito) y Local Storage
+        index.js            # Lógica de la página principal (home)
+        products.js         # Lógica de la página de productos
+        themeToggle.js      # Lógica para alternar el modo claro/oscuro
+    img/                    # Directorio para imágenes (ej: logos, banners)
+    productos.json          # Datos de los productos
+    index.html              # Página principal (Home)
+    productos.html          # Página de listado de productos
+    carrito.html            # Página del carrito de compras
+    contacto.html           # Página de contacto
+    package.json            # Metadatos del proyecto y scripts
+``````
 
 ## ⚙️ Cómo Ejecutar el Proyecto Localmente
 
